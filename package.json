@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/ricardgowl/apollo/issues"
   },
-  "homepage": "https://github.com/ricardgowl/apollo#readme"
+  "homepage": "https://github.com/ricardgowl/apollo#readme",
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "nodemon": "^3.1.10"
+  }
 }
