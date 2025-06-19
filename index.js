@@ -1,5 +1,5 @@
 const {ApolloServer, gql} = require('apollo-server')
-const { SessionsAPI } = require('./data_sources/sessions')
+const SessionsAPI = require('./data_sources/sessions')
 //const sessions = require('./data/sessions.json')
 
 const typeDefs = gql`
