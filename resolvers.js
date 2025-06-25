@@ -1,10 +1,9 @@
+const Query = require('./resolvers/query.js');
+const Session = require('./resolvers/session.js');
+const Mutation = require('./resolvers/mutation.js');
+
 module.exports = {
-    Query: {
-        sessions: (parent, args, {dataSources}, info) => {
-            return dataSources.sessionAPI.getSessions(args);
-        },
-        sessionById: (parent, {id}, {dataSources}, info) => {
-            return dataSources.sessionAPI.getSessionById(id);
-        }
-    }
+    Query,
+    Session,
+    Mutation
 }

@@ -1,4 +1,4 @@
-const {gql} = require('apollo-server');
+const { gql } = require('apollo-server');
 module.exports = gql`
 type Query {
     sessions(
@@ -14,6 +14,19 @@ type Query {
     level: String
     ): [Session],
     sessionById(id: ID): Session
+    speakers: [Speaker]
+    speakerById(id: ID): Speaker
+}
+
+type Mutation {
+    toggleFavoriteSession(id: ID!): Session
+}
+
+type Speaker {
+    id: ID!,
+    bio: String
+    name: String
+    sessions: [Session]
 }
 
 type Session {
@@ -27,4 +40,5 @@ type Session {
     format: String
     track: String @deprecated(reason: "Use trackName instead")
     level: String
+    speakers: [Speaker]
 }`
