@@ -13,10 +13,18 @@ type Query {
     track: String
     level: String
     ): [Session],
-    sessionById(id: ID): Session
+    sessionById(id: ID): SessionOrError
     speakers: [Speaker]
-    speakerById(id: ID): Speaker
+    speakerById(id: ID): SpeakerOrError
 }
+    union SessionOrError = Session | Error
+    union SpeakerOrError = Speaker | Error
+
+    type Error {
+        message: String
+        code: String
+        token: String
+    }
 
 enum Room {
     SOL
