@@ -5,5 +5,10 @@ const Mutation = require('./resolvers/mutation.js');
 module.exports = {
     Query,
     Session,
-    Mutation
+    Mutation,
+    Room: {
+        SOL: 'Sol',
+        SATURN: 'Saturn',
+        EUROPA: 'Europa'
+    },
 }

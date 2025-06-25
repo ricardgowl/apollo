@@ -7,7 +7,7 @@ type Query {
     description: String
     startsAt: String
     endsAt: String
-    room: String
+    room: Room
     day: String
     format: String
     track: String
@@ -18,8 +18,15 @@ type Query {
     speakerById(id: ID): Speaker
 }
 
+enum Room {
+    SOL
+    SATURN
+    EUROPA
+}
+
 type Mutation {
     toggleFavoriteSession(id: ID!): Session
+    addNewSession(session: SessionInput!): Session
 }
 
 type Speaker {
@@ -27,6 +34,19 @@ type Speaker {
     bio: String
     name: String
     sessions: [Session]
+}
+
+input SessionInput {
+    title: String!
+    description: String
+    startsAt: String
+    endsAt: String
+    room: String
+    day: String
+    format: String
+    track: String
+    level: String
+    favorite: Boolean
 }
 
 type Session {
@@ -40,5 +60,6 @@ type Session {
     format: String
     track: String @deprecated(reason: "Use trackName instead")
     level: String
+    favorite: Boolean
     speakers: [Speaker]
 }`
