@@ -66,7 +66,6 @@ type Session {
     room: String
     day: String
     format: String
-    track: String @deprecated(reason: "Use trackName instead")
     level: String
     favorite: Boolean
     speakers: [Speaker]

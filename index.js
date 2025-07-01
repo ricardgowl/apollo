@@ -12,7 +12,11 @@ const dataSources = () => ({
 });
 
 const server = new ApolloServer({
-    typeDefs, resolvers, dataSources, debug: false, formatError: (error) => {
+    typeDefs, resolvers, dataSources, debug: false,
+    engine: {
+        graphVariant: "current"
+    },
+    formatError: (error) => {
         console.log("Format Error: ", error);
         if (error.extensions.code === 'INTERNAL_SERVER_ERROR') {
             console.log("Creating Specific Apollo Error");

@@ -26,6 +26,8 @@
   },
   "nodemonConfig": {
     "env": {
+      "APOLLO_KEY": "service:MySessionsAPI:Qw69d0B-IIpaZxQyxHv8IQ",
+      "APOLLO_GRAPH_REF": "MySessionsAPI@current",
       "NODE_ENV": "development"
     }
   }
